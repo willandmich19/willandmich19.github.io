@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond:medium,mediumitalic,extra-bold,extra-bolditalic');
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,700');
+
+/* Base styling */
+body { 
+    position: relative;
+}
+
+p, a, dd {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.25rem;
+    line-height: 2rem;
+}
+
+hr {
+    border: 1px solid #D3D3D3; 
+    width: 80%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1020;
+}
+
+details {
+    display: inline-block;
+}
+
+details > p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.15rem;
+}
+
+summary {
+    outline: none;
+}
+
+summary > p {
+    font-size: 1rem;
+    line-height: 1.15rem;
+    display: inline;
+}
+
+figcaption > p {
+    color: #A0A0A0;
+}
+
+/* Global Custom Styles */
+.no-widow {
+    display: inline-block;
+}
+
+/* *********************** Navigation ************************ */
+.custom_navbarbg-blue {
+    background-color: #037D9A;
+}
+
+#headerNavbar {
+    padding: 0;
+}
+
+#topnavigation .nav-link {
+    color: #FFF;
+}
+
+#topnavigation .active {
+    background-color: #FFF;
+}
+
+#topnavigation .nav-link.active {
+    font-weight: bold;
+    color: black;
+}
+
+/* *********************** Home ************************ */
+.home {
+    background-image:url('../images/home_image01.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+    width: 100%;
+}
+
+.home_frame {
+    text-align: center;
+    padding: 40px;
+}
+
+.home_h1 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000;
+    letter-spacing: 0.25rem;
+    background-color: rgba(160,160,160, 0.4);
+    display: inline;
+}
+
+.home_nonfancyfont_h1 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    letter-spacing: 0;
+    color: #000;
+}
+
+.home_h2 {
+    font-family: 'Work Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 3.75rem;
+    color: #FFF;
+    letter-spacing: 0.5rem;
+    font-weight: bold;
+    background-color: rgba(160,160,160, 0.4);
+    display: inline;
+}
+
+.home_weddingdate {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.75rem;
+    line-height: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.timer {
+    width: 75%;
+    height: auto;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#weddingdatecountdown {
+    font-style: italic;
+}
+
+/* *********************** Info ************************ */
+.info {
+    height: 100%;
+    width: auto;
+    padding: 100px 50px;
+    background-color: #94DCE0;
+    position: relative;
+}
+
+.info:before {
+    background: linear-gradient(-45deg, #94DCE0 8px, transparent 0), linear-gradient(45deg, #94DCE0 8px, transparent 0);
+    background-position: left-bottom;
+    background-repeat: repeat-x;
+    background-size: 16px 16px;
+    content: " ";
+    display: block;
+    position: absolute;
+    top: -16px;
+    left: 0px;
+    width: 100%;
+    height: 16px;
+}
+
+.info:after {
+    background: linear-gradient(-45deg, #FFF 8px, transparent 0), linear-gradient(45deg, #FFF 8px, transparent 0);
+    background-position: left-bottom;
+    background-repeat: repeat-x;
+    background-size: 16px 16px;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    width: 100%;
+    height: 16px;
+}
+
+.info_fancyfont {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    line-height: 3.25rem;
+    text-align: center;
+}
+
+/* *********************** Crew ************************ */
+.crew {
+    height: 100%;
+    width: auto;
+    padding: 100px 50px;
+    text-align: center;
+    position: relative;
+}
+
+.crew:before {
+    background: linear-gradient(-45deg, #FFF 8px, transparent 0), linear-gradient(45deg, #FFF 8px, transparent 0);
+    background-position: left-bottom;
+    background-repeat: repeat-x;
+    background-size: 16px 16px;
+    content: " ";
+    display: block;
+    position: absolute;
+    top: -16px;
+    left: 0px;
+    width: 100%;
+    height: 16px;
+}
+
+.crew:after {
+    background: linear-gradient(-45deg, #94DCE0 8px, transparent 0), linear-gradient(45deg, #94DCE0 8px, transparent 0);
+    background-position: left-bottom;
+    background-repeat: repeat-x;
+    background-size: 16px 16px;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    width: 100%;
+    height: 16px;
+}
+
+.crew_fancyfont {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    line-height: 3.25rem;
+}
+
+
+.d-flex {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.flex-item {
+    flex: 0 0 50%;
+    text-align: left;
+    margin: 0;
+}
+
+.flex-item h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.75rem;
+    line-height: 2rem;
+    font-weight: bold;
+}
+
+.flex-item:nth-of-type(odd) {
+    border-right-width: 2px;
+    border-left-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-style: solid;
+    border-color: #037D9A;
+}
+
+.flex-item:nth-of-type(1) {
+    padding: 3rem 1rem 1rem 1rem;
+    border-right-width: 2px;
+    border-left-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, rgba(3,125,154,0) 0%, rgba(3,125,154,1) 30%, rgba(3,125,154,1) 100%) 1 100%; 
+}
+
+.flex-item:nth-of-type(2) {
+    padding: 3rem 1rem 0rem 1rem;
+    border-left-width: 1px;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, rgba(3,125,154,0) 0%, rgba(3,125,154,1) 30%, rgba(3,125,154,1) 100%); 
+}
+
+.flex-item:nth-last-of-type(2) {
+    padding: 1rem 1rem 3rem 1rem;
+    border-right-width: 2px;
+    border-left-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, rgba(3,125,154,1) 0%, rgba(3,125,154,1) 70%, rgba(3,125,154,0) 100%) 1 100%; 
+}
+
+.figure-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* *********************** Locations ************************ */
+.locations {
+    height: 100%;
+    width: auto;
+    padding: 100px 50px;
+    background-color: #94DCE0;
+}
+
+.locations_fancyfont {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    line-height: 3.25rem;
+    text-align: center;
+}
+
+.locations h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.75rem;
+    line-height: 2rem;
+    font-weight: bold;
+}
+
+.locations li p {
+    margin: 0;
+}
+
+#church_map {
+    width: 100%;
+    height: 400px;
+    display: block;
+    margin: 1rem 0;
+}
+
+/* *********************** RSVP ************************ */
+.rsvp {
+    height: 100%;
+    width: auto;
+    padding: 100px 50px;
+    position: relative;
+}
+
+.rsvp:before {
+    background: linear-gradient(-45deg, #FFF 8px, transparent 0), linear-gradient(45deg, #FFF 8px, transparent 0);
+    background-position: left-bottom;
+    background-repeat: repeat-x;
+    background-size: 16px 16px;
+    content: " ";
+    display: block;
+    position: absolute;
+    top: -16px;
+    left: 0px;
+    width: 100%;
+    height: 16px;
+}
+
+.rsvp:after {
+    background: linear-gradient(-45deg, #94DCE0 8px, transparent 0), linear-gradient(45deg, #94DCE0 8px, transparent 0);
+    background-position: left-bottom;
+    background-repeat: repeat-x;
+    background-size: 16px 16px;
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    width: 100%;
+    height: 16px;
+}
+
+.rsvp_fancyfont {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    line-height: 3.25rem;
+    text-align: center;
+}
+
+/* *********************** Footer ************************ */
+.footer {
+    height: 300px;
+    width: auto;
+    padding: 100px 50px;
+    background-color: #94DCE0;
+}
+
+
+@media only screen and (max-width: 992px) {
+    /* *********************** Navigation ************************ */
+    #headerNavbar > .navbar-toggler {
+        margin: .25rem;
+    } 
+    
+    /* *********************** Home ************************ */
+    .frame {
+        margin-top: 180px;
+    }
+
+    /* *********************** Crew ************************ */
+    .d-flex {
+        width: 70%;
+    }
+}
+
+/* Custom */
+@media only screen and (max-width: 900px) {
+    .home_nonfancyfont {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    /* *********************** Home ************************ */
+    .frame {
+        width: 85%;
+        margin-top: 150px;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    /* *********************** Home ************************ */
+
+
+    /* *********************** Crew ************************ */
+    .d-flex {
+        width: 100%;
+    }
+
+    .flex-item {
+        flex: 0 0 100%;
+        margin: 0.5rem 0;
+    }
+
+    .flex-item:nth-of-type(odd) {
+        border-top-width: 2px;
+        border-right-width: 0; 
+    }
+
+    .flex-item:nth-of-type(1), .flex-item:nth-of-type(2) {
+        border: 0;
+        padding: 1rem;
+    }
+
+    .flex-item:nth-last-of-type(2) {
+        border-top-width: 2px;
+        border-right-width: 0;
+        border-style: solid;
+        border-color: #037D9A;
+        border-image: none;
+    }
+}
