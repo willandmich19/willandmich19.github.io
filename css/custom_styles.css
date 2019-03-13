@@ -82,35 +82,40 @@ figcaption > p {
     background-image:url('../images/home_image01.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-position: top;
     height: 800px;
     width: 100%;
+    margin-top: 48px;
 }
 
 .home_frame {
-    text-align: center;
     padding: 40px;
+    text-align: center;
+    position: relative;
+    top: 55%;
+    bottom: 25%;
 }
 
 .home_h1 {
     font-family: 'Work Sans', sans-serif;
     font-size: 2rem;
     font-weight: bold;
-    color: #000;
+    color: #FFF;
     letter-spacing: 0.25rem;
-    background-color: rgba(160,160,160, 0.4);
+    background-color: rgba(128,128,128, 0.4);
     display: inline;
 }
 
 .home_nonfancyfont_h1 {
     font-family: 'Work Sans', sans-serif;
     font-size: 1.5rem;
-    line-height: 2rem;
     letter-spacing: 0;
-    color: #000;
+    color: #FFF;
+}
+
+.home_nonfancyfont_h1_block {
+    display: inline;
+    font-size: 1.5rem;
 }
 
 .home_h2 {
@@ -120,27 +125,18 @@ figcaption > p {
     color: #FFF;
     letter-spacing: 0.5rem;
     font-weight: bold;
-    background-color: rgba(160,160,160, 0.4);
+    background-color: rgba(128,128,128, 0.7);
     display: inline;
 }
 
-.home_weddingdate {
-    font-family: 'EB Garamond', serif;
+.home_h3 {
+    font-family: 'Work Sans', sans-serif;
+    text-transform: uppercase;
     font-size: 1.75rem;
-    line-height: 2rem;
-    font-weight: bold;
-    text-align: center;
-}
-
-.timer {
-    width: 75%;
-    height: auto;
-    text-align: center;
-    margin: 0 auto;
-}
-
-#weddingdatecountdown {
-    font-style: italic;
+    color: #FFF;
+    letter-spacing: 0.15rem;
+    background-color: rgba(128,128,128, 0.4);
+    display: inline;
 }
 
 /* *********************** Info ************************ */
@@ -180,11 +176,34 @@ figcaption > p {
     height: 16px;
 }
 
+.info_frame {
+    width: 60%;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    top: 25%;
+    bottom: 25%;
+    margin: 0 auto;
+}
+
+.info_frame p {
+    text-align: left;
+    margin-top: 1rem;
+}
+
 .info_fancyfont {
     font-family: 'Great Vibes', cursive;
     font-size: 3rem;
     line-height: 3.25rem;
     text-align: center;
+}
+
+.info_weddingdate {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.75rem;
+    line-height: 2rem;
+    text-align: center;
+    font-weight: bold;
 }
 
 /* *********************** Crew ************************ */
@@ -302,6 +321,19 @@ figcaption > p {
     background-color: #94DCE0;
 }
 
+.locations_frame {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.locations_frame:nth-of-type(1) {
+    padding: 40px 40px 20px 40px;
+}
+
+.locations_frame:nth-of-type(2) {
+    padding: 20px 40px 40px 40px;
+}
+
 .locations_fancyfont {
     font-family: 'Great Vibes', cursive;
     font-size: 3rem;
@@ -372,12 +404,19 @@ figcaption > p {
 
 /* *********************** Footer ************************ */
 .footer {
-    height: 300px;
+    height: 200px;
     width: auto;
-    padding: 100px 50px;
+    padding: 85px 50px;
     background-color: #94DCE0;
 }
 
+#weddingdatecountdown {
+    font-style: italic;
+    font-family: 'EB Garamond', serif;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-align: center;
+}
 
 @media only screen and (max-width: 992px) {
     /* *********************** Navigation ************************ */
@@ -386,34 +425,54 @@ figcaption > p {
     } 
     
     /* *********************** Home ************************ */
-    .frame {
-        margin-top: 180px;
+
+    /* *********************** Info ************************ */
+    .info_frame {
+        width: 70%;
     }
 
     /* *********************** Crew ************************ */
     .d-flex {
         width: 70%;
     }
+
+    /* *********************** Locations ************************ */
+    .locations_frame {
+        width: 70%;
+    }
+
 }
 
 /* Custom */
 @media only screen and (max-width: 900px) {
-    .home_nonfancyfont {
-        display: block;
-    }
+    
 }
 
 @media only screen and (max-width: 767px) {
-    /* *********************** Home ************************ */
-    .frame {
-        width: 85%;
-        margin-top: 150px;
-    }
+
 }
 
 @media only screen and (max-width: 599px) {
     /* *********************** Home ************************ */
+    .home_frame {
+        top: 30%;
+        padding: 10px;
+    }
 
+    .home_nonfancyfont_h1_block {
+        display: block;
+    }
+
+    .home_nonfancyfont_h1{
+        display: inline;
+        background-color: rgba(160,160,160, 0.4);
+    }
+
+    /* *********************** Info ************************ */
+    .info_frame {
+        width: 100%;
+        padding: 1rem;
+    }
 
     /* *********************** Crew ************************ */
     .d-flex {
@@ -442,4 +501,14 @@ figcaption > p {
         border-color: #037D9A;
         border-image: none;
     }
+
+    /* *********************** Locations ************************ */
+    .locations_frame {
+        width: 100%;
+    }
+
+    .locations_frame:nth-of-type(n) {
+        padding: 1rem;
+    }
+
 }
