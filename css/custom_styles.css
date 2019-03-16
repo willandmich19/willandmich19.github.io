@@ -33,7 +33,7 @@ details {
 details > p {
     margin-top: 0.5rem;
     font-size: 1rem;
-    line-height: 1.15rem;
+    line-height: 1.35rem;
 }
 
 summary {
@@ -48,6 +48,12 @@ summary > p {
 
 figcaption > p {
     color: #A0A0A0;
+}
+
+label {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.25rem;
+    line-height: 2rem; 
 }
 
 /* Global Custom Styles */
@@ -97,7 +103,7 @@ figcaption > p {
 }
 
 .home_h1 {
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'EB Garamond', serif;
     font-size: 2rem;
     font-weight: bold;
     color: #FFF;
@@ -107,7 +113,7 @@ figcaption > p {
 }
 
 .home_nonfancyfont_h1 {
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'EB Garamond', serif;
     font-size: 1.5rem;
     letter-spacing: 0;
     color: #FFF;
@@ -119,7 +125,7 @@ figcaption > p {
 }
 
 .home_h2 {
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'EB Garamond', serif;
     text-transform: uppercase;
     font-size: 3.75rem;
     color: #FFF;
@@ -130,7 +136,7 @@ figcaption > p {
 }
 
 .home_h3 {
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'EB Garamond', serif;
     text-transform: uppercase;
     font-size: 1.75rem;
     color: #FFF;
@@ -255,8 +261,14 @@ figcaption > p {
     margin: 0 auto;
 }
 
-.flex-item {
+.flex-item:not(:first-of-type) {
     flex: 0 0 50%;
+    text-align: left;
+    margin: 0;
+}
+
+.flex-item:first-of-type {
+    flex: 0 0 100%;
     text-align: left;
     margin: 0;
 }
@@ -268,7 +280,7 @@ figcaption > p {
     font-weight: bold;
 }
 
-.flex-item:nth-of-type(odd) {
+.flex-item:nth-of-type(even) {
     border-right-width: 2px;
     border-left-width: 0;
     border-top-width: 0;
@@ -277,7 +289,7 @@ figcaption > p {
     border-color: #037D9A;
 }
 
-.flex-item:nth-of-type(1) {
+.flex-item:nth-of-type(2) {
     padding: 3rem 1rem 1rem 1rem;
     border-right-width: 2px;
     border-left-width: 0;
@@ -287,7 +299,7 @@ figcaption > p {
     border-image: linear-gradient(to bottom, rgba(3,125,154,0) 0%, rgba(3,125,154,1) 30%, rgba(3,125,154,1) 100%) 1 100%; 
 }
 
-.flex-item:nth-of-type(2) {
+.flex-item:nth-of-type(3) {
     padding: 3rem 1rem 0rem 1rem;
     border-left-width: 1px;
     border-right-width: 0;
@@ -402,6 +414,57 @@ figcaption > p {
     text-align: center;
 }
 
+.rsvp_frame {
+    width: 60%;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.nav-tabs .nav-item {
+    flex-basis: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.tab-content {
+    padding: 1rem;
+    border-left: 1px;
+    border-right: 1px;
+    border-bottom: 1px;
+    border-style: solid;
+    border-color: #ced4da;
+    border-top: 0;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #ced4da !important;
+}
+
+.nav-link {
+    font-size: 1.25rem;
+    line-height: 2rem;
+}
+
+.nav-link.active {
+    border-color: #ced4da #ced4da #FFF !important;
+    font-weight: bold;
+    background-color: #94DCE0 !important;
+}
+
+#rsvpYes:active, #rsvpNo:active {
+    background-color: #94DCE0;
+}
+
+#rsvpYes:hover {
+    background-color: #94DCE0;
+    color: #000;
+}
+
+#rsvpNo:hover {
+    background-color: #94DCE0;
+    color: #000;
+}
+
 /* *********************** Footer ************************ */
 .footer {
     height: 200px;
@@ -438,6 +501,11 @@ figcaption > p {
 
     /* *********************** Locations ************************ */
     .locations_frame {
+        width: 70%;
+    }
+
+    /* *********************** RSVP ************************ */
+    .rsvp_frame {
         width: 70%;
     }
 
@@ -479,17 +547,29 @@ figcaption > p {
         width: 100%;
     }
 
-    .flex-item {
+    .flex-item:not(:first-of-type) {
         flex: 0 0 100%;
         margin: 0.5rem 0;
     }
 
-    .flex-item:nth-of-type(odd) {
+    .flex-item:first-of-type {
+        margin: 0.5rem 0;
+    }
+
+    .flex-item:nth-of-type(even) {
         border-top-width: 2px;
         border-right-width: 0; 
     }
 
-    .flex-item:nth-of-type(1), .flex-item:nth-of-type(2) {
+    .flex-item:nth-of-type(2) {
+        border-top-width: 2px;
+        border-right-width: 0;
+        border-style: solid;
+        border-color: #037D9A;
+        border-image: none; 
+    }
+    
+    .flex-item:nth-of-type(3) {
         border: 0;
         padding: 1rem;
     }
@@ -508,6 +588,12 @@ figcaption > p {
     }
 
     .locations_frame:nth-of-type(n) {
+        padding: 1rem;
+    }
+
+     /* *********************** RSVP ************************ */
+     .rsvp_frame {
+        width: 100%;
         padding: 1rem;
     }
 
