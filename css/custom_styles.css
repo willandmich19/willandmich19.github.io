@@ -54,6 +54,7 @@ label {
     font-family: 'EB Garamond', serif;
     font-size: 1.25rem;
     line-height: 2rem; 
+    font-weight: bold;
 }
 
 /* Global Custom Styles */
@@ -110,6 +111,7 @@ label {
     letter-spacing: 0.25rem;
     background-color: rgba(128,128,128, 0.4);
     display: inline;
+    line-height: normal;
 }
 
 .home_nonfancyfont_h1 {
@@ -133,6 +135,7 @@ label {
     font-weight: bold;
     background-color: rgba(128,128,128, 0.7);
     display: inline;
+    line-height: normal;
 }
 
 .home_h3 {
@@ -143,6 +146,7 @@ label {
     letter-spacing: 0.15rem;
     background-color: rgba(128,128,128, 0.4);
     display: inline;
+    line-height: normal;
 }
 
 /* *********************** Info ************************ */
@@ -455,14 +459,43 @@ label {
     background-color: #94DCE0;
 }
 
-#rsvpYes:hover {
+#rsvpYes:hover, #rsvpNo:hover, #inputSubmitYes:hover, #inputSubmitNo:hover {
     background-color: #94DCE0;
     color: #000;
+    font-weight: bold;
 }
 
-#rsvpNo:hover {
-    background-color: #94DCE0;
-    color: #000;
+#inputSubmitYes, #inputSubmitNo {
+    border-color: #ced4da;
+    font-family: 'EB Garamond', serif;
+    font-size: 1.25rem;
+    line-height: 2rem; 
+    font-weight: bold;
+}
+
+.nav-link {
+    color: #037D9A;
+}
+
+.rsvp_h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.25rem;
+    line-height: 2rem; 
+    font-weight: bold;
+    display: inline;
+}
+
+.rsvp li p {
+    margin: 0;
+}
+
+.btn-disabled {
+    pointer-events: none;
+}
+
+.smalltext {
+    text-align: center;
+    font-size: 1rem;
 }
 
 /* *********************** Footer ************************ */

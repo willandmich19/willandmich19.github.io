@@ -22,6 +22,8 @@
     <script src="js/navigationclickhide.js"></script>
     <script src="js/scrollspysmoothanimate.js"></script>
     <script src="//cdn.jsdelivr.net/npm/details-polyfill@1/index.min.js" async></script>
+    <script src="js/valid.js"></script>
+    <script src="js/js.cookie.js"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -30,6 +32,23 @@
     <!-- Custom CSS (If any) -->
     <link rel="stylesheet" type="text/css" href="css/custom_styles.css" />
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
     <title>Michelle & William Wedding 2019</title>
 </head>
@@ -311,30 +330,29 @@
         <aside class="rsvp_frame">
             <h1 class="rsvp_fancyfont">R.S.V.P.</h1>
             <p><span class="no-widow"><span class="text-danger">*</span> are</span> <span class="no-widow">required fields.</span></p>
-            <form action="" method="">
+            <form>
                 <div class="form-group">
                     <label for="selectTitle">Title</label> <span class="text-danger">*</span>
-                    <select class="form-control" id="selectTitle">
-                        <option selected>Please pick one</option>
-                        <option value="Mr. Awesome">Mr. Awesome...</option>
+                    <select class="form-control" id="selectTitle" name="selectTitle">
+                        <option value="Mr. Awesome" selected>Mr. Awesome...</option>
                         <option value="Mrs. Sexy">Mrs. Sexy...</option>
                         <option value="Miss Single, ready to mingle">Miss. Single, ready to mingle...</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputFirstName">First Name</label> <span class="text-danger">*</span>
-                    <input type="text" class="form-control" id="inputFirstName" placeholder="Enter your first name">
+                    <label for="inputFirstName">First Name</label> <span class="text-danger text-d-firstname">*</span>
+                    <input type="text" class="form-control" id="inputFirstName" name="inputFirstName" placeholder="Enter your first name" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputLastName">Last Name</label> <span class="text-danger">*</span>
-                    <input type="text" class="form-control" id="inputLastName" placeholder="Enter your last name">
+                    <label for="inputLastName">Last Name</label> <span class="text-danger text-d-lastname">*</span>
+                    <input type="text" class="form-control" id="inputLastName" name="inputLastName" placeholder="Enter your last name" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputFirstName">Email Address</label> <span class="text-danger">*</span>
-                    <input type="email" class="form-control" id="inputEmailAdress" placeholder="Enter your email address">
+                    <label for="inputEmailAddress">Email Address</label> <span class="text-danger text-d-email">*</span>
+                    <input type="email" class="form-control" id="inputEmailAddress" name="inputEmailAddress" placeholder="Enter your email address" required>
                 </div>
 
                 <!-- Nav tabs -->
@@ -342,20 +360,65 @@
                     <label for="tabsYesNo">RSVP</label> <span class="text-danger">*</span>
                     <ul class="nav nav-tabs" role="tablist" id="tabsYesNo">
                         <li class="nav-item">
-                            <a id="rsvpYes" class="nav-link active" href="#displayYes" role="tab" data-toggle="tab">Yes</a>
+                            <a id="rsvpYes" class="nav-link active" href="#displayYes" role="tab" data-toggle="tab" value="rsvpYes">Yes</a>
                         </li>
                         <li class="nav-item">
-                            <a id="rsvpNo" class="nav-link" href="#displayNo" role="tab" data-toggle="tab">No</a>
+                            <a id="rsvpNo" class="nav-link" href="#displayNo" role="tab" data-toggle="tab" value="rsvpNo">No</a>
                         </li>
                     </ul>
                     <div class="tab-content">
                         <div id="displayYes" class="tab-pane active">
-                            <h2>Yes</h2>
-                            <p>You said yes</p>
+                            <h2 class="rsvp_h2"><span class="no-widow">Yes, you</span> have accept with pleasure to attend our wedding. Please fill the information below and <span class="no-widow">click submit.</span></h2>
+                            <br /><br />
+                            <div class="form-group">
+                                <label for="selectNumberOfGuests">Number of Guests</label> <span class="text-danger">*</span>
+                                <select class="form-control" id="selectNumberOfGuests" name="selectNumberOfGuests">
+                                    <option value="0" selected>0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5+">5+</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="textareaNameOfGuests">Name of Guest(s) if any</label> <span class="text-danger text-d-nameofguests">*</span>
+                                <textarea class="form-control" id="textareaNameOfGuests" rows="6" name="textareaNameOfGuests" placeholder="1. John Smith or write none if no guests."></textarea>
+                            </div>
+
+                            <p><strong><span class="no-widow">Entree Served:</span></strong></p>
+                            <ul>
+                                <li>
+                                    <p>Chateau Briand (Beef)</p>
+                                </li>
+                                <li>
+                                    <p>Chicken Scaloppini</p>
+                                </li>
+                                <li>
+                                    <p>Roasted Potatoes and Veggies</p>
+                                </li>
+                            </ul>
+                            <p><em><span class="no-widow">Yes, this</span> will be an <span class="no-widow">open bar.</span></em></p>
+
+                            <div class="form-group">
+                                <label for="textareaSpecialInstructions">Special Instructions (Optional)</label> 
+                                <textarea class="form-control" id="textareaSpecialInstructions" rows="4" name="textareaSpecialInstructions" placeholder="Enter any special instructions needed for your entree. (Eg: Food Allergies, Halal, Vegetarian, ...etc)"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-disabled form-control" name="inputSubmitYes" id="inputSubmitYes" value="Submit" disabled="disabled">
+                            </div>
+
+                            <p class="smalltext"><span class="no-widow">While gifts</span> are not mandatory. If you choose to bring any, no <span class="no-widow">large gifts.</span></p>
                         </div>
                         <div id="displayNo" class="tab-pane fade">
-                            <h2>No</h2>
-                            <p>You said no</p>
+                            <h2 class="rsvp_h2"><span class="no-widow">No, you</span> have decline with regrets. Please click submit <span class="no-widow">to finish.</span></h2>
+                            <br /><br />
+
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-disabled form-control" name="inputSubmitNo" id="inputSubmitNo" value="Submit" disabled="disabled">
+                            </div>
                         </div>
                     </div>
                 </div>
