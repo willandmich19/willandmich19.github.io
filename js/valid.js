@@ -29,7 +29,7 @@ $(document).ready(function(){
     }
 
     function validateEmail(stringvalue) {
-        var regex = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+        var regex = new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
 
         if(regex.test(stringvalue)) {
             return true;
@@ -89,23 +89,41 @@ $(document).ready(function(){
         var nameOfGuests = $('#textareaNameOfGuests').val();
         var specialIn = $('#textareaSpecialInstructions').val();
 
+        var fnFlag = false;
+        var lnFlag = false;
+        var emFlag = false;
+
         if(rsvp == "yes") {
-            console.log("Was here");
+            console.log(firstName, lastName, email);
 
             if(!validateAlphabetical(firstName)) {
-                flag = false;
+                fnFlag = false;
                 $(".text-d-firstname").html("*Only alphabetical letters and spaces only.");
+            }
+            else {
+                fnFlag = true
+                $(".text-d-firstname").html("*");
             }
 
             if(!validateAlphabetical(lastName)) {
-                flag = false;
+                lnFlag = false;
                 $(".text-d-lastname").html("*Only alphabetical letters and spaces only.");
+            }
+            else {
+                lnFlag = true;
+                $(".text-d-lastname").html("*");
             }
 
             if(!validateEmail(email)) {
-                flag = false;
+                emFlag = false;
                 $(".text-d-email").html("*Valid email address only.");
             }
+            else {
+                emFlag = true;
+                $(".text-d-email").html("*");
+            }
+
+            (fnFlag == true && lnFlag == true && emFlag == true) ? flag = true : flag = false;
 
             if(flag) {
                 $("#submitMessage").html(submitMessage(true, firstName, email));

@@ -63,7 +63,7 @@ label {
 }
 
 .inline {
-    display: inline;
+    display: inline !important;
 }
 
 /* *********************** Navigation ************************ */
