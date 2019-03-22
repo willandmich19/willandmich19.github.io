@@ -286,14 +286,14 @@
             <h2>Location 1:</h2>
             <ul>
                 <li>
-                    <p><span class="no-widow"><strong>Place:</strong> St.</span> Thomas the Apostle Roman <span class="no-widow"></span>Catholic
+                    <p><span class="no-widow"><strong>Place:</strong> St.</span> Thomas the Apostle Roman <span class="no-widow">Catholic
                         Church</span></p>
                 </li>
                 <li>
                     <p><span class="no-widow"><strong>Address:</strong> 14</span> Highgate Dr, Markham, ON <span class="no-widow">L3R 3R6, Canada</span></p>
                 </li>
                 <li>
-                    <p><strong>Time:</strong> 9:00 am</p>
+                    <p><strong>Time:</strong> 9:30 am</p>
                 </li>
                 <li>
                     <p><strong>Event:</strong> Church ceremony</p>
@@ -330,9 +330,9 @@
         <aside class="rsvp_frame">
             <h1 class="rsvp_fancyfont">R.S.V.P.</h1>
             <p><span class="no-widow"><span class="text-danger">*</span> are</span> <span class="no-widow">required fields.</span></p>
-            <form>
+            <form onsubmit="return false;">
                 <div class="form-group">
-                    <label for="selectTitle">Title</label> <span class="text-danger">*</span>
+                    <label for="selectTitle">Title</label> <p class="inline"><span class="text-danger">*</span></p>
                     <select class="form-control" id="selectTitle" name="selectTitle">
                         <option value="Mr. Awesome" selected>Mr. Awesome...</option>
                         <option value="Mrs. Sexy">Mrs. Sexy...</option>
@@ -341,23 +341,23 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="inputFirstName">First Name</label> <span class="text-danger text-d-firstname">*</span>
+                    <label for="inputFirstName">First Name</label> <p class="inline"><span class="text-danger text-d-firstname">*</span></p>
                     <input type="text" class="form-control" id="inputFirstName" name="inputFirstName" placeholder="Enter your first name" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputLastName">Last Name</label> <span class="text-danger text-d-lastname">*</span>
+                    <label for="inputLastName">Last Name</label> <p class="inline"><span class="text-danger text-d-lastname">*</span></p>
                     <input type="text" class="form-control" id="inputLastName" name="inputLastName" placeholder="Enter your last name" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputEmailAddress">Email Address</label> <span class="text-danger text-d-email">*</span>
+                    <label for="inputEmailAddress">Email Address</label> <p class="inline"><span class="text-danger text-d-email">*</span></p>
                     <input type="email" class="form-control" id="inputEmailAddress" name="inputEmailAddress" placeholder="Enter your email address" required>
                 </div>
 
                 <!-- Nav tabs -->
                 <div class="form-group">
-                    <label for="tabsYesNo">RSVP</label> <span class="text-danger">*</span>
+                    <label for="tabsYesNo">RSVP</label> <p class="inline"><span class="text-danger">*</span></p>
                     <ul class="nav nav-tabs" role="tablist" id="tabsYesNo">
                         <li class="nav-item">
                             <a id="rsvpYes" class="nav-link active" href="#displayYes" role="tab" data-toggle="tab" value="rsvpYes">Yes</a>
@@ -383,7 +383,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="textareaNameOfGuests">Name of Guest(s) if any</label> <span class="text-danger text-d-nameofguests">*</span>
+                                <label for="textareaNameOfGuests">Name of Guest(s) if any</label> <p class="inline"><span class="text-danger text-d-nameofguests">*</span></p>
                                 <textarea class="form-control" id="textareaNameOfGuests" rows="6" name="textareaNameOfGuests" placeholder="1. John Smith or write none if no guests."></textarea>
                             </div>
 
@@ -402,12 +402,12 @@
                             <p><em><span class="no-widow">Yes, this</span> will be an <span class="no-widow">open bar.</span></em></p>
 
                             <div class="form-group">
-                                <label for="textareaSpecialInstructions">Special Instructions (Optional)</label> 
+                                <label for="textareaSpecialInstructions">Special Instructions (Optional)</label> <p class="inline"><span class="text-danger text-d-speciali"></span></p>
                                 <textarea class="form-control" id="textareaSpecialInstructions" rows="4" name="textareaSpecialInstructions" placeholder="Enter any special instructions needed for your entree. (Eg: Food Allergies, Halal, Vegetarian, ...etc)"></textarea>
                             </div>
 
                             <div class="form-group">
-                                <input type="submit" class="btn btn-disabled form-control" name="inputSubmitYes" id="inputSubmitYes" value="Submit" disabled="disabled">
+                                <input type="submit" class="btn btn-disabled form-control" name="inputSubmitYes" id="inputSubmitYes" value="Submit" disabled="disabled" data-toggle="modal" data-target="#submitModal">
                             </div>
 
                             <p class="smalltext"><span class="no-widow">While gifts</span> are not mandatory. If you choose to bring any, no <span class="no-widow">large gifts.</span></p>
@@ -417,7 +417,7 @@
                             <br /><br />
 
                             <div class="form-group">
-                                <input type="submit" class="btn btn-disabled form-control" name="inputSubmitNo" id="inputSubmitNo" value="Submit" disabled="disabled">
+                                <input type="submit" class="btn btn-disabled form-control" name="inputSubmitNo" id="inputSubmitNo" value="Submit" disabled="disabled" data-toggle="modal" data-target="#submitModal">
                             </div>
                         </div>
                     </div>
@@ -431,6 +431,24 @@
         <div id="weddingdatecountdown"></div>
     </section>
 
+    <!-- Modal -->
+    <div class="modal fade" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="submitModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div id="submitMessage"></div>
+            </div>
+            <div class="modal-footer">
+              <button id="buttonClose" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 </body>
 
 </html>
