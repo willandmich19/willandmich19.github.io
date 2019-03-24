@@ -62,8 +62,14 @@ label {
     display: inline-block;
 }
 
-.inline {
-    display: inline !important;
+.error {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    margin: 0.15rem;
+}
+
+#submitModal {
+    padding: 0 20px;
 }
 
 /* *********************** Navigation ************************ */
@@ -551,7 +557,6 @@ label {
     .rsvp_frame {
         width: 70%;
     }
-
 }
 
 /* Custom */

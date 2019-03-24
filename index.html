@@ -18,12 +18,13 @@
     <script src="js/jquery-ui.min.js"></script>
 
     <!-- Custom JavaScript (If any) -->
+    <script src="js/jquery.cookie.js"></script>
     <script src="js/timer.js"></script>
-    <script src="js/navigationclickhide.js"></script>
     <script src="js/scrollspysmoothanimate.js"></script>
+    <script src="js/navigationclickhide.js"></script>
     <script src="//cdn.jsdelivr.net/npm/details-polyfill@1/index.min.js" async></script>
     <script src="js/valid.js"></script>
-    <script src="js/js.cookie.js"></script>
+    
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -332,7 +333,7 @@
             <p><span class="no-widow"><span class="text-danger">*</span> are</span> <span class="no-widow">required fields.</span></p>
             <form onsubmit="return false;">
                 <div class="form-group">
-                    <label for="selectTitle">Title</label> <p class="inline"><span class="text-danger">*</span></p>
+                    <label for="selectTitle">Title <span class="text-danger">*</span></label>
                     <select class="form-control" id="selectTitle" name="selectTitle">
                         <option value="Mr. Awesome" selected>Mr. Awesome...</option>
                         <option value="Mrs. Sexy">Mrs. Sexy...</option>
@@ -341,23 +342,26 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="inputFirstName">First Name</label> <p class="inline"><span class="text-danger text-d-firstname">*</span></p>
+                    <label for="inputFirstName">First Name <span class="text-danger">*</span></label>
+                    <p class="error"><span class="text-danger text-d-firstname"></span></p>
                     <input type="text" class="form-control" id="inputFirstName" name="inputFirstName" placeholder="Enter your first name" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputLastName">Last Name</label> <p class="inline"><span class="text-danger text-d-lastname">*</span></p>
+                    <label for="inputLastName">Last Name <span class="text-danger">*</span></label>
+                    <p class="error"><span class="text-danger text-d-lastname"></span></p>
                     <input type="text" class="form-control" id="inputLastName" name="inputLastName" placeholder="Enter your last name" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputEmailAddress">Email Address</label> <p class="inline"><span class="text-danger text-d-email">*</span></p>
+                    <label for="inputEmailAddress">Email Address <span class="text-danger">*</span></label>
+                    <p class="error"><span class="text-danger text-d-email"></span></p>
                     <input type="email" class="form-control" id="inputEmailAddress" name="inputEmailAddress" placeholder="Enter your email address" required>
                 </div>
 
                 <!-- Nav tabs -->
                 <div class="form-group">
-                    <label for="tabsYesNo">RSVP</label> <p class="inline"><span class="text-danger">*</span></p>
+                    <label for="tabsYesNo">RSVP <span class="text-danger">*</span></label>
                     <ul class="nav nav-tabs" role="tablist" id="tabsYesNo">
                         <li class="nav-item">
                             <a id="rsvpYes" class="nav-link active" href="#displayYes" role="tab" data-toggle="tab" value="rsvpYes">Yes</a>
@@ -371,7 +375,7 @@
                             <h2 class="rsvp_h2"><span class="no-widow">Yes, you</span> have accept with pleasure to attend our wedding. Please fill the information below and <span class="no-widow">click submit.</span></h2>
                             <br /><br />
                             <div class="form-group">
-                                <label for="selectNumberOfGuests">Number of Guests</label> <span class="text-danger">*</span>
+                                <label for="selectNumberOfGuests">Number of Guests <span class="text-danger">*</span></label>
                                 <select class="form-control" id="selectNumberOfGuests" name="selectNumberOfGuests">
                                     <option value="0" selected>0</option>
                                     <option value="1">1</option>
@@ -383,7 +387,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="textareaNameOfGuests">Name of Guest(s) if any</label> <p class="inline"><span class="text-danger text-d-nameofguests">*</span></p>
+                                <label for="textareaNameOfGuests">Name of Guest(s) if any <span class="text-danger">*</span></label>
+                                <p class="error"><span class="text-danger text-d-nameofguests"></span></p>
                                 <textarea class="form-control" id="textareaNameOfGuests" rows="6" name="textareaNameOfGuests" placeholder="1. John Smith or write none if no guests."></textarea>
                             </div>
 
@@ -402,7 +407,8 @@
                             <p><em><span class="no-widow">Yes, this</span> will be an <span class="no-widow">open bar.</span></em></p>
 
                             <div class="form-group">
-                                <label for="textareaSpecialInstructions">Special Instructions (Optional)</label> <p class="inline"><span class="text-danger text-d-speciali"></span></p>
+                                <label for="textareaSpecialInstructions">Special Instructions (Optional) <span class="text-danger">*</span></label>
+                                <p class="error"><span class="text-danger text-d-speciali"></span></p>
                                 <textarea class="form-control" id="textareaSpecialInstructions" rows="4" name="textareaSpecialInstructions" placeholder="Enter any special instructions needed for your entree. (Eg: Food Allergies, Halal, Vegetarian, ...etc)"></textarea>
                             </div>
 
@@ -433,7 +439,7 @@
 
     <!-- Modal -->
     <div class="modal fade" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="submitModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog h-100 d-flex flex-column justify-content-center my-0" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
