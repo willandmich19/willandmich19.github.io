@@ -52,23 +52,33 @@ $(document).ready(function(){
                 return false;
             }
         }
+
+        function weddingRSVP(stringValue) {
+            if(stringValue == "yes") {
+                $("#entry\\.562112224").attr("value", "yes");
+                console.log('here');
+            }
+            else {
+                $("#entry\\.562112224").attr("value", "no");
+            }
+        }
         
         var rsvp = "yes";
         $('#rsvpYes').click(function() {
             rsvp = "yes";
+            weddingRSVP("yes");
         });
 
         $('#rsvpNo').click(function() {
             rsvp = "no";
+            weddingRSVP("no");
         })
 
         var flag = true;
-        
-        $('input[type="text"], input[type="email"], #textareaNameOfGuests').keyup(function() {
-            var t = $('#textareaNameOfGuests').val();
-            //console.log("Value: " + t);
 
-            if ($('#inputFirstName').val() != "" && $('#inputLastName').val() != "" && $('#inputEmailAddress').val() != "") {
+        $('input[type="text"], input[type="email"], #entry\\.1491442351').keyup(function() {
+
+            if ($('#entry\\.909741691').val() != "" && $('#entry\\.1921397157').val() != "" && $('#entry\\.272956838').val() != "") {
 
                 $('#inputSubmitNo').removeAttr('disabled');
                 $('#inputSubmitNo').removeClass('btn-disabled');  
@@ -92,16 +102,16 @@ $(document).ready(function(){
         });
 
 
+        $('#gForm').submit(function() {
 
-        $('form').submit(function() {
-            var title = $("#selectTitle").val();
-            var firstName = $('#inputFirstName').val();
-            var lastName = $('#inputLastName').val();
-            var email = $('#inputEmailAddress').val();
+            var title = $("#entry\\.239982359").val();
+            var firstName = $('#entry\\.909741691').val();
+            var lastName = $('#entry\\.1921397157').val();
+            var email = $('#entry\\.272956838').val();
         
-            var numOfGuests = $('#selectNumberOfGuests').val();
-            var nameOfGuests = $('#textareaNameOfGuests').val();
-            var specialIn = $('#textareaSpecialInstructions').val();
+            var numOfGuests = $('#entry\\.2084251440').val();
+            var nameOfGuests = $('#entry\\.1491442351').val();
+            var specialIn = $('#entry\\.1177541228').val();
 
             var fnFlag = false;
             var lnFlag = false;
@@ -175,7 +185,22 @@ $(document).ready(function(){
                     $("#submitMessage").html(submitMessage(true, firstName, email));
 
                     /* Set the cookie here to only submit once */
-                    $.cookie('WillAndMichRSVPSubmitted', 'yes', { expires: 120 });
+                   // $.cookie('WillAndMichRSVPSubmitted', 'yes', { expires: 120 });
+                   
+                    var extraData = {};
+
+                    $('#gForm').ajaxSubmit({
+                        data: extraData,
+                        dataType: 'jsonp',  // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
+                        error: function () {
+                            // Submit of form should be successful but JSONP callback will fail because Google Forms
+                            // does not support it, so this is handled as a failure.
+                            // You can also redirect the user to a custom thank-you page:
+                            // window.location = 'http://www.mydomain.com/thankyoupage.html'
+                            alert("Pause first");
+                            $(location).attr("href", "https://willandmich19.github.io/");
+                        }
+                    })
                 }
                 else {
                     $("#submitMessage").html(errorMessage());
@@ -189,7 +214,7 @@ $(document).ready(function(){
                     $("#submitMessage").html(submitMessage(false, firstName, email));
 
                     /* Set the cookie here to only submit once */
-                    $.cookie('WillAndMichRSVPSubmitted', 'yes', { expires: 120 });
+                    //$.cookie('WillAndMichRSVPSubmitted', 'yes', { expires: 120 });
                 }
                 else {
                     $("#submitMessage").html(errorMessage());

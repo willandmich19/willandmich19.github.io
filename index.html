@@ -331,37 +331,39 @@
         <aside class="rsvp_frame">
             <h1 class="rsvp_fancyfont">R.S.V.P.</h1>
             <p><span class="no-widow"><span class="text-danger">*</span> are</span> <span class="no-widow">required fields.</span></p>
-            <form onsubmit="return false;">
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSd7EGc9gQrEO_Jul4VqT9F-_7RIL_AB8Jpbdb6fDuvXflWdvA/formResponse" target="hidden_iframe" id="gForm" method="POST" name="gForm">
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
                 <div class="form-group">
                     <label for="selectTitle">Title <span class="text-danger">*</span></label>
-                    <select class="form-control" id="selectTitle" name="selectTitle">
-                        <option value="Mr. Awesome" selected>Mr. Awesome...</option>
-                        <option value="Mrs. Sexy">Mrs. Sexy...</option>
-                        <option value="Miss Single, ready to mingle">Miss. Single, ready to mingle...</option>
+                    <select class="form-control" id="entry.239982359" name="entry.239982359">
+                        <option value="Mr. Awesome..." selected>Mr. Awesome...</option>
+                <option value="Mrs. Sexy...">Mrs. Sexy...</option>
+                <option value="Miss. Single, ready to mingle...">Miss. Single, ready to mingle...</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="inputFirstName">First Name <span class="text-danger">*</span></label>
                     <p class="error"><span class="text-danger text-d-firstname"></span></p>
-                    <input type="text" class="form-control" id="inputFirstName" name="inputFirstName" placeholder="Enter your first name" required>
+                    <input type="text" class="form-control" id="entry.909741691" name="entry.909741691" placeholder="Enter your first name" required>
                 </div>
 
                 <div class="form-group">
                     <label for="inputLastName">Last Name <span class="text-danger">*</span></label>
                     <p class="error"><span class="text-danger text-d-lastname"></span></p>
-                    <input type="text" class="form-control" id="inputLastName" name="inputLastName" placeholder="Enter your last name" required>
+                    <input type="text" class="form-control" id="entry.1921397157" name="entry.1921397157" placeholder="Enter your last name" required>
                 </div>
 
                 <div class="form-group">
                     <label for="inputEmailAddress">Email Address <span class="text-danger">*</span></label>
                     <p class="error"><span class="text-danger text-d-email"></span></p>
-                    <input type="email" class="form-control" id="inputEmailAddress" name="inputEmailAddress" placeholder="Enter your email address" required>
+                    <input type="email" class="form-control" id="entry.272956838" name="entry.272956838" placeholder="Enter your email address" required>
                 </div>
 
                 <!-- Nav tabs -->
                 <div class="form-group">
                     <label for="tabsYesNo">RSVP <span class="text-danger">*</span></label>
+                    <input type="hidden" id="entry.562112224" name="entry.562112224" value="yes">
                     <ul class="nav nav-tabs" role="tablist" id="tabsYesNo">
                         <li class="nav-item">
                             <a id="rsvpYes" class="nav-link active" href="#displayYes" role="tab" data-toggle="tab" value="rsvpYes">Yes</a>
@@ -376,7 +378,7 @@
                             <br /><br />
                             <div class="form-group">
                                 <label for="selectNumberOfGuests">Number of Guests <span class="text-danger">*</span></label>
-                                <select class="form-control" id="selectNumberOfGuests" name="selectNumberOfGuests">
+                                <select class="form-control" id="entry.2084251440" name="entry.2084251440">
                                     <option value="0" selected>0</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -389,7 +391,7 @@
                             <div class="form-group">
                                 <label for="textareaNameOfGuests">Name of Guest(s) if any <span class="text-danger">*</span></label>
                                 <p class="error"><span class="text-danger text-d-nameofguests"></span></p>
-                                <textarea class="form-control" id="textareaNameOfGuests" rows="6" name="textareaNameOfGuests" placeholder="1. John Smith or write none if no guests."></textarea>
+                                <textarea class="form-control" id="entry.1491442351" rows="6" name="entry.1491442351" placeholder="1. John Smith or write none if no guests."></textarea>
                             </div>
 
                             <p><strong><span class="no-widow">Entree Served:</span></strong></p>
@@ -407,9 +409,12 @@
                             <p><em><span class="no-widow">Yes, this</span> will be an <span class="no-widow">open bar.</span></em></p>
 
                             <div class="form-group">
-                                <label for="textareaSpecialInstructions">Special Instructions (Optional) <span class="text-danger">*</span></label>
+                                <label for="textareaSpecialInstructions">Special Instructions (Optional)</label>
                                 <p class="error"><span class="text-danger text-d-speciali"></span></p>
-                                <textarea class="form-control" id="textareaSpecialInstructions" rows="4" name="textareaSpecialInstructions" placeholder="Enter any special instructions needed for your entree. (Eg: Food Allergies, Halal, Vegetarian, ...etc)"></textarea>
+                                <textarea class="form-control" id="entry.1177541228" rows="4" name="entry.1177541228" placeholder="Enter any special instructions needed for your entree. (Eg: Food Allergies, Halal, Vegetarian, ...etc)"></textarea>
+                                <input type="hidden" name="fvv" value="1">
+                                <input type="hidden" name="fbzx" value="-5674306001355148925">
+                                <input type="hidden" name="pageHistory" value="0">
                             </div>
 
                             <div class="form-group">
