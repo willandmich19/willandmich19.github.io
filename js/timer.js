@@ -25,5 +25,4 @@ $(document).ready(function(){
         document.getElementById("weddingdatecountdown").innerHTML = "EXPIRED";
         }
     }, 1000);
-
 });

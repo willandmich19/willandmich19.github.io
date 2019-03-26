@@ -7,19 +7,6 @@ $(document).ready(function(){
             return "<p><span class='no-widow'>There is</span> an error submitting the form. Please correct the error before <span class='no-widow'>submitting again.</span></p>";
         }
 
-        function submitMessage(boolvalue, firstName, email) {
-            var stringMessage = "";
-
-            if(boolvalue) {
-                stringMessage = "<p><span class='no-widow'>You have</span> <span class='no-widow'>RSVP <strong>Yes</strong>.</span></p><p>Thanks <strong>" + firstName + "</strong>.</p><p><span class='no-widow'>Your form</span> was submitted successfully. A copy of what you filled out will be emailed to you with this address: <strong><span class='no-widow'>" + email + "</span></strong>.</p>";
-            }
-            else {
-                stringMessage = "<p><span class='no-widow'>You have</span> <span class='no-widow'>RSVP <strong>No</strong>.</span></p><p>Thanks <strong>" + firstName + "</strong>.</p><p><span class='no-widow'>Your form</span> was submitted successfully. A copy of what you filled out will be emailed to you with this address: <strong><span class='no-widow'>" + email + "</span></strong>.</p>";
-            }
-
-            return stringMessage;
-        }
-
         function validateAlphabetical(stringvalue) {
             var regex = new RegExp("^[a-zA-Z ]+$");
 
@@ -108,6 +95,8 @@ $(document).ready(function(){
             var firstName = $('#entry\\.909741691').val();
             var lastName = $('#entry\\.1921397157').val();
             var email = $('#entry\\.272956838').val();
+
+            var userRsvp = $('#entry\\.562112224').val();
         
             var numOfGuests = $('#entry\\.2084251440').val();
             var nameOfGuests = $('#entry\\.1491442351').val();
@@ -182,25 +171,24 @@ $(document).ready(function(){
 
                 if(flag) {
                     /* All Is good in here - RSVP Yes */
-                    $("#submitMessage").html(submitMessage(true, firstName, email));
 
                     /* Set the cookie here to only submit once */
                    // $.cookie('WillAndMichRSVPSubmitted', 'yes', { expires: 120 });
                    
-                    var extraData = {};
+                   var extraData = {};
 
-                    $('#gForm').ajaxSubmit({
-                        data: extraData,
-                        dataType: 'jsonp',  // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
-                        error: function () {
-                            // Submit of form should be successful but JSONP callback will fail because Google Forms
-                            // does not support it, so this is handled as a failure.
-                            // You can also redirect the user to a custom thank-you page:
-                            // window.location = 'http://www.mydomain.com/thankyoupage.html'
-                            alert("Pause first");
-                            $(location).attr("href", "https://willandmich19.github.io/");
-                        }
-                    })
+                   $('#gForm').ajaxSubmit({
+                       data: extraData,
+                       dataType: 'jsonp',  // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
+                       error: function () {
+                           // Submit of form should be successful but JSONP callback will fail because Google Forms
+                           // does not support it, so this is handled as a failure.
+                           // You can also redirect the user to a custom thank-you page:
+                           // window.location = 'http://www.mydomain.com/thankyoupage.html'
+                       }
+                   })
+
+                   $(location).attr("href", "./redirect.html");
                 }
                 else {
                     $("#submitMessage").html(errorMessage());
@@ -211,10 +199,24 @@ $(document).ready(function(){
 
                 if(flag) {
                     /* All Is good in here - RSVP No */
-                    $("#submitMessage").html(submitMessage(false, firstName, email));
 
                     /* Set the cookie here to only submit once */
                     //$.cookie('WillAndMichRSVPSubmitted', 'yes', { expires: 120 });
+
+                    var extraData = {};
+
+                    $('#gForm').ajaxSubmit({
+                        data: extraData,
+                        dataType: 'jsonp',  // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
+                        error: function () {
+                            // Submit of form should be successful but JSONP callback will fail because Google Forms
+                            // does not support it, so this is handled as a failure.
+                            // You can also redirect the user to a custom thank-you page:
+                            // window.location = 'http://www.mydomain.com/thankyoupage.html'
+                        }
+                    })
+
+                    $(location).attr("href", "./redirect.html");
                 }
                 else {
                     $("#submitMessage").html(errorMessage());
