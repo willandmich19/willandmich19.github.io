@@ -76,6 +76,14 @@ label {
     text-decoration: underline;
 }
 
+ol li {
+    font-weight: bold;
+}
+
+ol li>p {
+    font-weight: normal;
+}
+
 /* *********************** Navigation ************************ */
 .custom_navbarbg-blue {
     background-color: #037D9A;
@@ -602,6 +610,10 @@ label {
     .home_nonfancyfont_h1{
         display: inline;
         background-color: rgba(128,128,128, 0.4);
+    }
+
+    .home_h2 {
+        font-size: 2.75rem;
     }
 
     /* *********************** Info ************************ */
