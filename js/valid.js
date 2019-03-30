@@ -156,7 +156,7 @@ $(document).ready(function(){
                 if(specialIn != "") {
                     if(!valdiateTextbox(specialIn)) {
                         spFlag = false;
-                        $(".text-d-speciali").html("Numbers, characters, commas and periods only.");
+                        $(".text-d-speciali").html("Numbers, characters, spaces, commas and periods only.");
                     }
                     else {
                         spFlag = true;
@@ -189,6 +189,7 @@ $(document).ready(function(){
                    })
 
                    $(location).attr("href", "./redirect.html");
+                   //console.log(title, firstName, lastName, email, numOfGuests, nameOfGuests, specialIn);
                 }
                 else {
                     $("#submitMessage").html(errorMessage());
@@ -199,14 +200,16 @@ $(document).ready(function(){
 
                 if(flag) {
                     /* All Is good in here - RSVP No */
+                    $('#entry\\.1491442351').val("not applicable");
+                    $('#entry\\.1177541228').val("not applicable");
 
                     /* Set the cookie here to only submit once */
                     //$.cookie('WillAndMichRSVPSubmitted', 'yes', { expires: 120 });
 
-                    var extraData = {};
+                    var extraData2 = {};
 
                     $('#gForm').ajaxSubmit({
-                        data: extraData,
+                        data: extraData2,
                         dataType: 'jsonp',  // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
                         error: function () {
                             // Submit of form should be successful but JSONP callback will fail because Google Forms
@@ -217,6 +220,8 @@ $(document).ready(function(){
                     })
 
                     $(location).attr("href", "./redirect.html");
+
+                    //console.log(title, firstName, lastName, email, numOfGuests, nameOfGuests, specialIn);
                 }
                 else {
                     $("#submitMessage").html(errorMessage());
