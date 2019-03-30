@@ -200,7 +200,7 @@ $(document).ready(function(){
 
                 if(flag) {
                     /* All Is good in here - RSVP No */
-                    $('#entry\\.1491442351').val("not applicable");
+                    $('#entry\\.1491442351').val("none");
                     $('#entry\\.1177541228').val("not applicable");
 
                     /* Set the cookie here to only submit once */
