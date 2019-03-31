@@ -43,7 +43,6 @@ $(document).ready(function(){
         function weddingRSVP(stringValue) {
             if(stringValue == "yes") {
                 $("#entry\\.562112224").attr("value", "yes");
-                console.log('here');
             }
             else {
                 $("#entry\\.562112224").attr("value", "no");
@@ -89,7 +88,8 @@ $(document).ready(function(){
         });
 
 
-        $('#gForm').submit(function() {
+        $('#gForm').submit(function(event) {
+            event.preventDefault();
 
             var title = $("#entry\\.239982359").val();
             var firstName = $('#entry\\.909741691').val();
@@ -136,7 +136,7 @@ $(document).ready(function(){
             if(rsvp == "yes") {
                 if(!valdiateTextbox(nameOfGuests)) {
                     nogFlag = false;
-                    $(".text-d-nameofguests").html("Numbers, characters, commas and periods only.");
+                    $(".text-d-nameofguests").html("Numbers, characters, spaces, commas and periods only.");
                 }
                 else {
                     if(numOfGuests == 0) {
@@ -175,6 +175,8 @@ $(document).ready(function(){
                     /* Set the cookie here to only submit once */
                    // $.cookie('WillAndMichRSVPSubmitted', 'yes', { expires: 120 });
                    
+                   console.log(title, firstName, lastName, email, numOfGuests, nameOfGuests, specialIn);
+                   
                    var extraData = {};
 
                    $('#gForm').ajaxSubmit({
@@ -185,11 +187,10 @@ $(document).ready(function(){
                            // does not support it, so this is handled as a failure.
                            // You can also redirect the user to a custom thank-you page:
                            // window.location = 'http://www.mydomain.com/thankyoupage.html'
+                           $(location).attr("href", "./redirect.html"); 
                        }
-                   })
-
-                   $(location).attr("href", "./redirect.html");
-                   //console.log(title, firstName, lastName, email, numOfGuests, nameOfGuests, specialIn);
+                   });
+          
                 }
                 else {
                     $("#submitMessage").html(errorMessage());
@@ -200,12 +201,14 @@ $(document).ready(function(){
 
                 if(flag) {
                     /* All Is good in here - RSVP No */
-                    $('#entry\\.1491442351').val("none");
+                    $('#entry\\.1491442351').val("not applicable");
                     $('#entry\\.1177541228').val("not applicable");
 
                     /* Set the cookie here to only submit once */
                     //$.cookie('WillAndMichRSVPSubmitted', 'yes', { expires: 120 });
 
+                    console.log(title, firstName, lastName, email, numOfGuests, nameOfGuests, specialIn);
+                    
                     var extraData2 = {};
 
                     $('#gForm').ajaxSubmit({
@@ -216,12 +219,9 @@ $(document).ready(function(){
                             // does not support it, so this is handled as a failure.
                             // You can also redirect the user to a custom thank-you page:
                             // window.location = 'http://www.mydomain.com/thankyoupage.html'
+                            $(location).attr("href", "./redirect.html");
                         }
-                    })
-
-                    $(location).attr("href", "./redirect.html");
-
-                    //console.log(title, firstName, lastName, email, numOfGuests, nameOfGuests, specialIn);
+                    });
                 }
                 else {
                     $("#submitMessage").html(errorMessage());
