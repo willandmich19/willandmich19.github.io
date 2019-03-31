@@ -173,7 +173,7 @@ $(document).ready(function(){
                     /* All Is good in here - RSVP Yes */
 
                     /* Set the cookie here to only submit once */
-                    $.cookie('WillAndMichRSVPSubmitted', 'yes', { expires: 120 });
+                   // $.cookie('WillAndMichRSVPSubmitted', 'yes', { expires: 120 });
                    
                    console.log(title, firstName, lastName, email, numOfGuests, nameOfGuests, specialIn);
                    
@@ -205,7 +205,7 @@ $(document).ready(function(){
                     $('#entry\\.1177541228').val("not applicable");
 
                     /* Set the cookie here to only submit once */
-                    $.cookie('WillAndMichRSVPSubmitted', 'yes', { expires: 120 });
+                    //$.cookie('WillAndMichRSVPSubmitted', 'yes', { expires: 120 });
 
                     console.log(title, firstName, lastName, email, numOfGuests, nameOfGuests, specialIn);
                     
@@ -232,7 +232,6 @@ $(document).ready(function(){
         });
     }
     else {
-        $("#submittedFormBefore").removeClass("hidden");
-        $("#gForm").find("input, textarea, select").attr("disabled", "disabled");
+        console.log("You have a cookie");
     }
 });

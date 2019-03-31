@@ -68,6 +68,11 @@ label {
     margin: 0.15rem;
 }
 
+.hidden {
+    visibility: hidden;
+    display: none;
+}
+
 #submitModal {
     padding: 0 20px;
 }
