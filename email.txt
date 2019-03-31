@@ -17,12 +17,17 @@
   <p>
   <span style="display: inline-block">We happily</span> invite you to join us in celebrating this joyful moment of our lives and wish for <span style="display: inline-block">your attendance.</span>
   </p>
+  <p><em><span style="display: inline-block;">(If we</span> have reserved a seat for your guest(s), only 1 RSVP is needed <span style="display: inline-block;">for submitting.)</span></em></p>
   <p>
   <span style="display: inline-block">Please click</span> below <span style="display: inline-block">to RSVP.</span>
   </p>
   <br />
   <p style="text-align: center;">
   <a style="background-color: #94DCE0; padding: 1rem 3rem; border-radius: 20px; margin: 0 auto; color: black; font-weight: bold; text-decoration: none;" href="https://willandmich19.github.io/">RSVP Here</a>
+  </p>
+  <br />
+  <hr />
+  <p style="text-align: center;"> <span style="display: inline-block">Recommended browsers</span> to view this site: Chrome, Firefox  <span style="display: inline-block">and Safari.</span>
   </p>
   </div>
 </div>
