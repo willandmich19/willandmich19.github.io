@@ -115,6 +115,7 @@ $(document).ready(function(){
             }
             else {
                 fnFlag = true
+                $(".text-d-firstname").html("");
             }
 
             if(!validateAlphabetical(lastName)) {
@@ -123,6 +124,7 @@ $(document).ready(function(){
             }
             else {
                 lnFlag = true;
+                $(".text-d-lastname").html("");
             }
 
             if(!validateEmail(email)) {
@@ -131,6 +133,7 @@ $(document).ready(function(){
             }
             else {
                 emFlag = true;
+                $(".text-d-email").html("");
             }
 
             if(rsvp == "yes") {
@@ -142,6 +145,7 @@ $(document).ready(function(){
                     if(numOfGuests == 0) {
                         if(nameOfGuests.toLowerCase() === "none") {
                             nogFlag = true;
+                            $(".text-d-nameofguests").html("");
                         }
                         else {
                             noFlag = false;
@@ -150,6 +154,7 @@ $(document).ready(function(){
                     }
                     else {
                         nogFlag = true;
+                        $(".text-d-nameofguests").html("");
                     }
                 }
 
@@ -160,10 +165,12 @@ $(document).ready(function(){
                     }
                     else {
                         spFlag = true;
+                        $(".text-d-speciali").html("");
                     }
                 }
                 else {
                     spFlag = true;
+                    $(".text-d-speciali").html("");
                 }
                 
                 
