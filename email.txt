@@ -1,0 +1,29 @@
+<body style="width: 100%; height: auto; margin: 0; padding: 10px 0;">
+<div style="max-width:450px; width: 100%; height: auto; margin: 0 auto; border: 5px solid #037D9A; padding: 1.5rem;">
+  <div style="width: 100%; height: auto; display: block; margin: auto; text-align: center;">
+  <img style="width: 100%; height: auto;" src="https://willandmich19.github.io/images/email_banner.jpg" alt="Michelle and William" />
+  </div>
+  
+  <div style="font-family: Arial, sans-serif;">
+  <h1 style="text-align: center; font-size: 1.5rem; margin-bottom: 0;">
+    Michelle and William 2019 Wedding
+  </h1>
+  <h2 style="text-align: center; font-size: 1.25rem; margin-top: 0; color: #808080;">
+  Family and Friends Celebration
+  </h2>
+  <p>
+  Dear <strong>(Somebodies)</strong>, 
+  </p>
+  <p>
+  <span style="display: inline-block">We happily</span> invite you to join us in celebrating this joyful moment of our lives and wish for <span style="display: inline-block">your attendance.</span>
+  </p>
+  <p>
+  <span style="display: inline-block">Please click</span> below <span style="display: inline-block">to RSVP.</span>
+  </p>
+  <br />
+  <p style="text-align: center;">
+  <a style="background-color: #94DCE0; padding: 1rem 3rem; border-radius: 20px; margin: 0 auto; color: black; font-weight: bold; text-decoration: none;" href="https://willandmich19.github.io/">RSVP Here</a>
+  </p>
+  </div>
+</div>
+</body>
