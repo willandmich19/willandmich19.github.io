@@ -171,6 +171,7 @@ $(document).ready(function(){
 
                 if(flag) {
                     /* All Is good in here - RSVP Yes */
+                    $("#submitMessage").html("Thank you!");
 
                     /* Set the cookie here to only submit once */
                     $.cookie('WillAndMichRSVPSubmitted', 'yes', { expires: 120 });
@@ -203,6 +204,7 @@ $(document).ready(function(){
                     /* All Is good in here - RSVP No */
                     $('#entry\\.1491442351').val("not applicable");
                     $('#entry\\.1177541228').val("not applicable");
+                    $("#submitMessage").html("Thank you!");
 
                     /* Set the cookie here to only submit once */
                     $.cookie('WillAndMichRSVPSubmitted', 'yes', { expires: 120 });
