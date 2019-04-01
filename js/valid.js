@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
-    var cookieValue = $.cookie('WillAndMichRSVPSubmitted');
+    //var cookieValue = $.cookie('WillAndMichRSVPSubmitted');
 
-    if(cookieValue != "yes") {
+    //if(cookieValue != "yes") {
         function errorMessage() {
             return "<p><span class='no-widow'>There is</span> an error submitting the form. Please correct the error before <span class='no-widow'>submitting again.</span></p>";
         }
@@ -90,6 +90,17 @@ $(document).ready(function(){
 
         $('#gForm').submit(function(event) {
             event.preventDefault();
+            event.stopImmediatePropagation();
+
+            $('#inputSubmitYes').addClass('btn-disabled');
+            $('#inputSubmitNo').addClass('btn-disabled');
+       
+            setTimeout(function() {
+                $('#inputSubmitYes').removeAttr('disabled');
+                $('#inputSubmitYes').removeClass('btn-disabled');
+                $('#inputSubmitNo').removeAttr('disabled');
+                $('#inputSubmitNo').removeClass('btn-disabled');  
+            }, 3000);
 
             var title = $("#entry\\.239982359").val();
             var firstName = $('#entry\\.909741691').val();
@@ -181,12 +192,13 @@ $(document).ready(function(){
                     $("#submitMessage").html("Thank you!");
 
                     /* Set the cookie here to only submit once */
-                    $.cookie('WillAndMichRSVPSubmitted', 'yes', { expires: 120 });
+                    //$.cookie('WillAndMichRSVPSubmitted', 'yes', { expires: 120 });
                    
                    console.log(title, firstName, lastName, email, numOfGuests, nameOfGuests, specialIn);
                    
                    var extraData = {};
 
+                   
                    $('#gForm').ajaxSubmit({
                        data: extraData,
                        dataType: 'jsonp',  // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
@@ -214,7 +226,7 @@ $(document).ready(function(){
                     $("#submitMessage").html("Thank you!");
 
                     /* Set the cookie here to only submit once */
-                    $.cookie('WillAndMichRSVPSubmitted', 'yes', { expires: 120 });
+                    //$.cookie('WillAndMichRSVPSubmitted', 'yes', { expires: 120 });
 
                     console.log(title, firstName, lastName, email, numOfGuests, nameOfGuests, specialIn);
                     
@@ -237,11 +249,11 @@ $(document).ready(function(){
                 }
             }
 
-            return false;
+            //return false;
         });
-    }
-    else {
-        $("#submittedFormBefore").removeClass("hidden");
-        $("#gForm").find("input, textarea, select").attr("disabled", "disabled");
-    }
+    //}
+    //else {
+    //    $("#submittedFormBefore").removeClass("hidden");
+    //    $("#gForm").find("input, textarea, select").attr("disabled", "disabled");
+    //}
 });
