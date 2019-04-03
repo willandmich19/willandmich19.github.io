@@ -532,22 +532,10 @@ ol li>p {
     margin: 0.5em 0;
 }
 
-.rsvp-btn {
-    color: #fff;
-    background-color: #037D9A;
-    font-family: 'EB Garamond', serif;
-    font-size: 1.25rem;
-    line-height: 2rem; 
-    font-weight: bold;
-}
-
-.rsvp-btn:hover, .rsvp-btn:active {
-    color: #000;
-    background-color: #94DCE0;
-}
-
-.rsvp-btn:focus {
-    outline: 0;
+.formframe {
+    width: 100%;
+    height: 1200px;
+    overflow: hidden;
 }
 
 /* *********************** Footer ************************ */
@@ -698,6 +686,12 @@ ol li>p {
      .rsvp_frame {
         width: 100%;
         padding: 1rem;
+    }
+
+    .formframe {
+        width: 110%;
+        height: 1350px;
+        margin: 0 0 0 -5%;
     }
 
 }
