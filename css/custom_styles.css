@@ -532,6 +532,24 @@ ol li>p {
     margin: 0.5em 0;
 }
 
+.rsvp-btn {
+    color: #fff;
+    background-color: #037D9A;
+    font-family: 'EB Garamond', serif;
+    font-size: 1.25rem;
+    line-height: 2rem; 
+    font-weight: bold;
+}
+
+.rsvp-btn:hover, .rsvp-btn:active {
+    color: #000;
+    background-color: #94DCE0;
+}
+
+.rsvp-btn:focus {
+    outline: 0;
+}
+
 /* *********************** Footer ************************ */
 .footer {
     height: 200px;

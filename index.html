@@ -34,7 +34,7 @@
     <script src="js/scrollspysmoothanimate.js"></script>
     <script src="js/navigationclickhide.js"></script>
     <script src="//cdn.jsdelivr.net/npm/details-polyfill@1/index.min.js" async></script>
-    <script src="js/valid.js"></script>
+    <!--<script src="js/valid.js"></script>-->
     
 
     <!-- Bootstrap CSS -->
@@ -345,11 +345,23 @@
     <section id="rsvp" class="rsvp">
         <aside class="rsvp_frame">
             <h1 class="rsvp_fancyfont">R.S.V.P.</h1>
+            <p><span class="no-widow">Please fill</span> out the RSVP form with your correct information to the best of </span> <span class="no-widow">your ability.</span></p>
+            <p><span class="no-widow">You should</span> recieve a confirmation email when you submit the form successfully. If you did not get an email, we did not get your RSVP. <strong>Please let us know if you did not recieved the </span> <span class="no-widow">confirmation email.</span></strong></p>
+            <br />
+            <hr />
+            <br />
+            <div class="form=group">
+                <button type="button" class="btn rsvp-btn btn-lg btn-block" name="buttonForm" id="buttonForm" data-toggle="modal" data-target="#submitModal">Fill out the Form</button>
+            </div>
+
+            <!--
             <p><span class="no-widow"><span class="text-danger">*</span> are</span> <span class="no-widow">required fields.</span></p>
             <p id="submittedFormBefore" class="text-danger hidden"><strong><span class="no-widow">You have</span> already submitted this <span class="no-widow">form before.</span></strong></p>
-            <form action="https://docs.google.com/forms/d/e/1FAIpQLSd7EGc9gQrEO_Jul4VqT9F-_7RIL_AB8Jpbdb6fDuvXflWdvA/formResponse" target="_self" id="gForm" method="POST" name="gForm">
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSd7EGc9gQrEO_Jul4VqT9F-_7RIL_AB8Jpbdb6fDuvXflWdvA/formResponse" target="_self" id="gForm" method="POST" name="gForm">-->
             <!--<form action="" id="gForm" method="GET" name="gForm">-->
                     <!--<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>-->
+
+                <!--
                 <div class="form-group">
                     <label for="selectTitle">Title <span class="text-danger">*</span></label>
                     <select class="form-control" id="entry.239982359" name="entry.239982359">
@@ -375,9 +387,10 @@
                     <label for="inputEmailAddress">Email Address <span class="text-danger">*</span></label>
                     <p class="error"><span class="text-danger text-d-email"></span></p>
                     <input type="text" class="form-control" id="entry.272956838" name="entry.272956838" placeholder="Enter your email address" required>
-                </div>
+                </div>-->
 
                 <!-- Nav tabs -->
+                <!--
                 <div class="form-group">
                     <label for="tabsYesNo">RSVP <span class="text-danger">*</span></label>
                     <input type="text" class="hidden" id="entry.562112224" name="entry.562112224" value="yes">
@@ -452,7 +465,7 @@
                         </div>
                     </div>
                 </div>
-            </form>
+            </form>-->
         </aside>
     </section>
 
@@ -463,7 +476,8 @@
 
     <!-- Modal -->
     <div class="modal fade" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="submitModalLabel" aria-hidden="true">
-        <div class="modal-dialog h-100 d-flex flex-column justify-content-center my-0" role="document">
+        <!--<div class="modal-dialog h-100 d-flex flex-column justify-content-center my-0" role="document">-->
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -471,10 +485,13 @@
               </button>
             </div>
             <div class="modal-body">
-              <div id="submitMessage"><p>Thank you!</p></div>
+              <div id="submitMessage">
+                  <!--<p>Thank you!</p>-->
+                  <iframe style="width: 100%; height: 450px;" src="https://docs.google.com/forms/d/e/1FAIpQLSeEFzGBG5ow1THHq3xvNmJzSQXd9uPd8UdesoAwkayVmT4zgg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+                </div>
             </div>
             <div class="modal-footer">
-              <button id="buttonClose" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <!--<button id="buttonClose" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
             </div>
           </div>
         </div>
